@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Materia {
+public class Profesores {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter

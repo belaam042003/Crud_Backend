@@ -1,7 +1,7 @@
 package com.example.demoarq.controllers;
 
-import com.example.demoarq.model.Materia;
-import com.example.demoarq.repos.MateriaRepository;
+import com.example.demoarq.model.Profesores;
+import com.example.demoarq.repos.ProfesoresRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,29 +30,29 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/materias")
-public class MateriaController {
+public class ProfesoresController {
 
     @Autowired
-    private MateriaRepository materiaRepository;
+    private ProfesoresRepository materiaRepository;
 
     @GetMapping
-    public List<Materia> listarMaterias() {
+    public List<Profesores> listarMaterias() {
         return materiaRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Materia obtenerMateriaPorId(@PathVariable Long id) {
+    public Profesores obtenerMateriaPorId(@PathVariable Long id) {
         return materiaRepository.findById(id).orElse(null);
     }
 
     @PostMapping
-    public Materia crearMateria(@RequestBody Materia materia) {
+    public Profesores crearMateria(@RequestBody Profesores materia) {
         return materiaRepository.save(materia);
     }
 
     @PutMapping("/{id}")
-    public Materia actualizarMateria(@PathVariable Long id, @RequestBody Materia materiaActualizada) {
-        Materia materiaExistente = materiaRepository.findById(id).orElse(null);
+    public Profesores actualizarMateria(@PathVariable Long id, @RequestBody Profesores materiaActualizada) {
+        Profesores materiaExistente = materiaRepository.findById(id).orElse(null);
         if (materiaExistente != null) {
             materiaExistente.setNombre(materiaActualizada.getNombre());
             materiaExistente.setCreditos(materiaActualizada.getCreditos());
