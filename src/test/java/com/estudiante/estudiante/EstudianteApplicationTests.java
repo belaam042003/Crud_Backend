@@ -1,13 +1,13 @@
-package com.example.demoarq;
+package com.estudiante.estudiante;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoArqApplicationTests {
+class EstudianteApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
