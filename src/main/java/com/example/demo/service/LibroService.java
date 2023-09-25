@@ -1,7 +1,7 @@
-package com.example.demoarq.services;
+package com.example.demo.service;
 
-import com.example.demoarq.model.Libro;
-import com.example.demoarq.repos.LibroRepository;
+import com.example.demo.model.Materia;
+import com.example.demo.repository.MateriaRepository1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +11,9 @@ import java.util.List;
 public class LibroService {
 
     @Autowired
-    private LibroRepository libroRepository;
+    private MateriaRepository1 libroRepository;
 
-    public List<Libro> getAll(){
+    public List<Materia> getAll(){
         return libroRepository.getAll();
     }
 }
